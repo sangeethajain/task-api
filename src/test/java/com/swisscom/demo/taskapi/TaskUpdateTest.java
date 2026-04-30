@@ -23,7 +23,7 @@ public class TaskUpdateTest extends BaseTest {
         System.out.println("CREATE RESPONSE: " + createResponse);
         // SIMPLE ID EXTRACTION (for demo)
         // assuming response: {"id":1,...}
-        Long id = Long.parseLong(createResponse.split("\"id\":")[1].split(",")[0]);
+        long id = Long.parseLong(createResponse.split("\"id\":")[1].split(",")[0]);
         System.out.println("EXTRACTED ID: " + id);
         // 2. UPDATE
         String updateBody = """

@@ -21,7 +21,7 @@ public class TaskDeleteTest extends BaseTest {
                 .andReturn();
         String response = createResult.getResponse().getContentAsString();
         System.out.println("CREATE RESPONSE: " + response);
-        Long id = Long.parseLong(response.split("\"id\":")[1].split(",")[0]);
+        long id = Long.parseLong(response.split("\"id\":")[1].split(",")[0]);
         // 2. DELETE
         MvcResult deleteResult = mockMvc.perform(delete("/tasks/" + id))
                 .andReturn();
