@@ -85,4 +85,19 @@ class TaskApiTest {
                 .andDo(org.springframework.test.web.servlet.result.MockMvcResultHandlers.print())
                 .andExpect(status().isOk());
     }
+    @Test
+    void shouldFailWhenTitleIsEmpty() throws Exception {
+        String body = """
+    {
+        "title": "",
+        "description": "Invalid",
+        "completed": false
+    }
+    """;
+
+        mockMvc.perform(post("/tasks")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(body))
+                .andExpect(status().isBadRequest());
+    }
 }

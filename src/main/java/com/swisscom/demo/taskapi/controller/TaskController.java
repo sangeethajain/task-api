@@ -3,7 +3,7 @@ package com.swisscom.demo.taskapi.controller;
 import com.swisscom.demo.taskapi.model.Task;
 import com.swisscom.demo.taskapi.service.TaskService;
 import org.springframework.web.bind.annotation.*;
-
+import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -31,7 +31,7 @@ public class TaskController {
 
     // CREATE new task
     @PostMapping
-    public Task createTask(@RequestBody Task task) {
+    public Task createTask(@Valid @RequestBody Task task) {
         return service.createTask(task);
     }
 

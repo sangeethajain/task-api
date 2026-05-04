@@ -24,4 +24,20 @@ public class TaskCreateTest extends BaseTest {
         String response = result.getResponse().getContentAsString();
         System.out.println("CREATE RESPONSE: " + response);
     }
+    @Test
+    void shouldFailWhenTitleIsEmpty() throws Exception {
+        String body = """
+        {
+            "title": "",
+            "description": "Invalid",
+            "completed": false
+        }
+        """;
+
+        mockMvc.perform(post("/tasks")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(body))
+                .andDo(org.springframework.test.web.servlet.result.MockMvcResultHandlers.print())
+                .andExpect(status().isBadRequest());
+    }
 }
