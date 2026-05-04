@@ -52,12 +52,13 @@ POST /tasks
   "completed": false
 }
 
-## Database (H2 Console)
-URL: http://localhost:8080/h2-console
-JDBC URL: jdbc:h2:mem:testdb
+## Database 
+
+In-memory H2 Database
 
 ## Future Improvements
-Pagination & filtering
+
+Filtering
+
 Swagger API documentation
-Authentication (JWT)
-Docker support
+
