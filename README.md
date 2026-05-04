@@ -44,12 +44,19 @@ mvn spring-boot:run
 mvn test
 
 ## Sample Request
+
 POST /tasks
+
 </>JSON
+
 {
+
   "title": "Learn Spring Boot",
+  
   "description": "Build REST APIs",
+  
   "completed": false
+  
 }
 
 ## Database 
