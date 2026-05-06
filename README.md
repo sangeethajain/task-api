@@ -35,6 +35,22 @@ exception → Global error handling
 | PUT    | /tasks/{id} | Update task     |
 | DELETE | /tasks/{id} | Delete task     |
 
+
+## Testing
+
+The project includes API-level tests using MockMvc to validate end-to-end behavior.
+
+* Tests are organized by operation:
+
+  * Create Task
+  * Update Task
+  * Delete Task
+  * Retrieve Tasks
+* A BaseTest class is used to configure shared test setup (MockMvc)
+
+Tests simulate real API usage scenarios and validate request/response behavior.
+
+
 ## How to Run
 mvn clean install
 
